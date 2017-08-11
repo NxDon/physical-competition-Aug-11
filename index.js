@@ -3,5 +3,8 @@
 function XXX(str,val){}*/
 
 function removeValFromStr(str,val) {
-    return str.replace(/val/g,"").split("->").filter((elem)=>elem).join("->");
+    var reg = new RegExp(val,"g");
+    return str.replace(reg,"").split("->").filter((elem)=>elem).join("->");
 }
+console.log('调用removeValFromStr("1->2->3->3->4->5->3",3)返回');
+console.log(removeValFromStr('1->2->3->3->4->5->3',3));
