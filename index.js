@@ -3,8 +3,7 @@
 function XXX(str,val){}*/
 
 function removeValFromStr(str,val) {
-    var reg = new RegExp(val,"g");
-    return str.replace(reg,"").split("->").filter((elem)=>elem).join("->");
+    return str.split("->").filter((elem) => elem != val).join("->");//此处需要使用!=来触发类型转换
 }
 console.log('调用removeValFromStr("1->2->3->3->4->5->3",3)返回');
 console.log(removeValFromStr('1->2->3->3->4->5->3',3));
